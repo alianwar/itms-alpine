@@ -1,0 +1,8 @@
+FROM alimanwar/itms-alpine:1.0 as itms
+
+FROM alpine
+
+WORKDIR /workdir
+
+RUN apk add --no-cache bash
+COPY --from=itms /itms /usr/local/itms
